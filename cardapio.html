@@ -181,10 +181,10 @@
     <label class="label-text">Tamanho:</label>
 <select id="tamanho" onchange="atualizarSabores()">
   <option value="">Selecione</option>
-        <option value="Média">Casal1 - R$108,00 (Pizza média + Mini bolo vulcão + Refri 600ml)</option>
-        <option value="Média">Casal2 - R$118,00 (1 pizza média + 2 bolos no pote + Refri 600ml)</option>
-        <option value="Grande">Casal3 - R$149,00 (1 pizza média + 1 pizza pequena + 1 garrafa de vinho)</option>
-        <option value="Promo">Promo COMBO - R$129,90 (Pizza Grande 3 sabores salgados + Pizza Pequena 1 sabor doce +CocaCola2L)</option>
+        <option value="Combo1">Combo Final de Semana - R$139,90 (2 Pizza Gigante + 1 Grande Doce + CocaCola2L)</option>
+        <option value="Combo2">Combo Econômico - R$39,90 (1 Pizza Média + CocaCola600ML)</option>
+        <option value="Combo3">Combo Rodízio em Casa - R$99,90 (3 Pizza Média + Refrigerante2L)</option>
+        <option value="Combo4">Combo da Casa - R$69,90 (1 Pizza Grande + Refrigerante2L)</option>
         <option value="Pequena">Pequena - R$59,90 (1 sabor)</option>
         <option value="Média">Média - R$79,90 (2 sabores)</option>
         <option value="Grande">Grande - R$97,90 (3 sabores)</option>
@@ -371,7 +371,10 @@ function atualizarSabores() {
     saboresDiv.appendChild(selectDoce);
   } else {
     let qtd = 0;
-  
+    if (tamanho === "Combo1") qtd = 3;
+    if (tamanho === "Combo2") qtd = 2;
+    if (tamanho === "Combo3") qtd = 2;
+    if (tamanho === "Combo4") qtd = 3;
     if (tamanho === "Pequena") qtd = 1;
     if (tamanho === "Média") qtd = 2;
     if (tamanho === "Grande") qtd = 3;
@@ -397,8 +400,10 @@ function calcularTotal() {
   let taxa = 0;
   
   const tamanho = document.getElementById("tamanho").value;
-
-  if (tamanho === "Promo") subtotal += 129.00;
+  if (tamanho === "Combo1") subtotal += 139,90;
+  if (tamanho === "Combo2") subtotal += 39,90;
+  if (tamanho === "Combo3") subtotal += 99,90;
+  if (tamanho === "Combo4") subtotal += 69,90;
   if (tamanho === "Pequena") subtotal += 59.90;
   if (tamanho === "Média") subtotal += 79.90;
   if (tamanho === "Grande") subtotal += 97.90;
