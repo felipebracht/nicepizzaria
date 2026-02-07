@@ -1,5 +1,4 @@
-<script>
-  const saboresLista = [
+const saboresLista = [
     {nome:"Alho e Óleo", ing:"Molho, mussarela, alho, Catupiry e parmesão"},
     {nome:"Atum", ing:"Molho, mussarela, atum ralado e tomates picados"},
     {nome:"Bacon", ing:"Molho, mussarela e bacon picado"},
@@ -68,3 +67,4 @@
     {nome:"Sonho de Valsa", ing:"Doce de leite, chocolate preto e Sonho de Valsa picado"},
     {nome:"Oreo", ing:"Doce de leite, chocolate preto e Oreo (Adicional R$5,00)"},
     {nome:"Ouro Branco", ing:"Doce de leite, chocolate branco e Ouro branco picado"}
+]
