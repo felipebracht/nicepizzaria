@@ -1,0 +1,141 @@
+/* CSS Custom Properties (HEX) */
+:root {
+  --evergreen: #222a0fff;
+  --black: #010103ff;
+  --fiery-terracotta: #dc562fff;
+  --amber-flame: #fcb414ff;
+  --reddish-brown: #8a4932ff;
+}
+
+/* Gradient Classes */
+.gradient-top {
+  background: linear-gradient(
+    0deg,
+    #222a0fff,
+    #010103ff,
+    #dc562fff,
+    #fcb414ff,
+    #8a4932ff
+  );
+}
+
+.gradient-right {
+  background: linear-gradient(
+    90deg,
+    #222a0fff,
+    #010103ff,
+    #dc562fff,
+    #fcb414ff,
+    #8a4932ff
+  );
+}
+
+.gradient-bottom {
+  background: linear-gradient(
+    180deg,
+    #222a0fff,
+    #010103ff,
+    #dc562fff,
+    #fcb414ff,
+    #8a4932ff
+  );
+}
+
+.gradient-left {
+  background: linear-gradient(
+    270deg,
+    #222a0fff,
+    #010103ff,
+    #dc562fff,
+    #fcb414ff,
+    #8a4932ff
+  );
+}
+
+.gradient-top-right {
+  background: linear-gradient(
+    45deg,
+    #222a0fff,
+    #010103ff,
+    #dc562fff,
+    #fcb414ff,
+    #8a4932ff
+  );
+}
+
+.gradient-bottom-right {
+  background: linear-gradient(
+    135deg,
+    #222a0fff,
+    #010103ff,
+    #dc562fff,
+    #fcb414ff,
+    #8a4932ff
+  );
+}
+
+.gradient-top-left {
+  background: linear-gradient(
+    225deg,
+    #222a0fff,
+    #010103ff,
+    #dc562fff,
+    #fcb414ff,
+    #8a4932ff
+  );
+}
+
+.gradient-bottom-left {
+  background: linear-gradient(
+    315deg,
+    #222a0fff,
+    #010103ff,
+    #dc562fff,
+    #fcb414ff,
+    #8a4932ff
+  );
+}
+
+.gradient-radial {
+  background: radial-gradient(
+    #222a0fff,
+    #010103ff,
+    #dc562fff,
+    #fcb414ff,
+    #8a4932ff
+  );
+}
+
+/* CSS Custom Properties (HSL) - alternativa
+:root {
+  --evergreen: hsla(78, 47%, 11%, 1);
+  --black: hsla(240, 50%, 1%, 1);
+  --fiery-terracotta: hsla(14, 71%, 52%, 1);
+  --amber-flame: hsla(41, 97%, 53%, 1);
+  --reddish-brown: hsla(16, 47%, 37%, 1);
+}
+*/
+
+/* SCSS HEX
+$evergreen: #222a0fff;
+$black: #010103ff;
+$fiery-terracotta: #dc562fff;
+$amber-flame: #fcb414ff;
+$reddish-brown: #8a4932ff;
+*/
+
+/* SCSS HSL
+$evergreen: hsla(78, 47%, 11%, 1);
+$black: hsla(240, 50%, 1%, 1);
+$fiery-terracotta: hsla(14, 71%, 52%, 1);
+$amber-flame: hsla(41, 97%, 53%, 1);
+$reddish-brown: hsla(16, 47%, 37%, 1);
+*/
+
+/* SCSS RGB
+$evergreen: rgba(34, 42, 15, 1);
+$black: rgba(1, 1, 3, 1);
+$fiery-terracotta: rgba(220, 86, 47, 1);
+$amber-flame: rgba(252, 180, 20, 1);
+$reddish-brown: rgba(138, 73, 50, 1);
+*/

@@ -1,0 +1,133 @@
+body {
+  font-family: "Poppins", sans-serif;
+  padding-top: 120px;
+}
+
+@media (max-width: 991px) {
+  body {
+    padding-top: 100px;
+  }
+
+  .navbar-brand img {
+    max-height: 60px;
+  }
+}
+
+.bg-navbar {
+  background-color: #222;
+}
+
+.navbar {
+  transition: all 0.3s ease;
+}
+
+.navbar-brand img {
+  max-height: 80px;
+}
+
+.card {
+  background: #fac564;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+.card-title {
+  color: #4f4537;
+  font-weight: bold;
+  text-align: center;
+}
+select,
+input,
+button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+}
+
+select,
+input {
+  background: #ffedcb;
+  color: black;
+}
+
+button {
+  background: white;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #4f4537;
+  color: white;
+}
+
+.total {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: #4f4537;
+}
+
+.label-text {
+  color: #4f4537;
+  font-weight: 400;
+}
+.button-style {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-links a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #4f4537;
+  color: white;
+  margin-right: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #fac564;
+  color: white;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  padding: 40px 0 20px;
+}
+
+footer h5 {
+  color: #fac564;
+  margin-bottom: 20px;
+}
+
+footer p,
+footer li {
+  color: #bdc3c7;
+  line-height: 1.8;
+}
+
+footer a {
+  color: #bdc3c7;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
+}
+.copy-text {
+  font-size: 14px;
+}

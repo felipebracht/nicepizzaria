@@ -1,498 +1,346 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
-    <title>Nice Pizzaria - Cardápio</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"
-      rel="stylesheet"
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cardápio - Nice Pizzaria</title>
+    <meta
+      name="description"
+      content="Confira o cardápio da Nice Pizzaria. Pizzas artesanais, combos especiais e entrega em Caxias do Sul."
+    />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cardápio - Nice Pizzaria" />
+    <meta
+      property="og:description"
+      content="Confira o cardápio da Nice Pizzaria. Pizzas artesanais, combos especiais e entrega em Caxias do Sul."
+    />
+    <meta
+      property="og:image"
+      content="https://nicepizzaria.com.br/images/og.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://nicepizzaria.com.br/cardapio.html"
+    />
+    <meta property="og:locale" content="pt_BR" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cardápio - Nice Pizzaria" />
+    <meta
+      name="twitter:description"
+      content="Confira o cardápio da Nice Pizzaria. Pizzas artesanais, combos especiais e entrega em Caxias do Sul."
+    />
+    <meta
+      name="twitter:image"
+      content="https://nicepizzaria.com.br/images/og.jpg"
     />
     <link
-      href="https://fonts.googleapis.com/css?family=Josefin+Sans"
-      rel="stylesheet"
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon/apple-touch-icon.png"
     />
-
-    <!-- Bootstrap CSS -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon/favicon-32x32.png"
     />
-    <!-- Font Awesome Icons -->
     <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon/favicon-16x16.png"
+    />
+    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico" />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
+    <meta name="theme-color" content="#d32f2f" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
     />
-    <style>
-      body {
-        font-family: "Poppins", sans-serif;
-        padding-top: 80px;
-      }
-
-      .bg-navbar {
-        background-color: #222;
-      }
-
-      .navbar {
-        transition: all 0.3s ease;
-      }
-
-      .navbar-brand img {
-        max-height: 80px;
-      }
-
-      .card {
-        background: #fac564;
-        border-radius: 8px;
-        padding: 20px;
-        margin: 20px auto;
-        max-width: 800px;
-      }
-      .card-title {
-        color: #4f4537;
-        font-weight: bold;
-        text-align: center;
-      }
-      select, input, button {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border-radius: 8px;
-        border: none;
-      }
-
-      select, input {
-        background: #ffedcb;
-        color: black;
-      }
-
-      button {
-        background: white;
-        color: black;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-
-      button:hover {
-        background: #4f4537;
-        color: white;
-      }
-
-      .total {
-        font-size: 1.5rem;
-        margin-top: 20px;
-        color: #4f4537;
-      }
-
-      .label-text {
-        color: #4f4537;
-        font-weight: 400;
-      }
-      .button-style {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-      }
-
-      .social-links a {
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-        text-align: center;
-        border-radius: 50%;
-        background-color: #4f4537;
-        color: white;
-        margin-right: 10px;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-      }
-
-      .social-links a:hover {
-        background-color: #fac564;
-        color: white;
-      }
-
-      footer {
-        background-color: #222;
-        color: white;
-        padding: 40px 0 20px;
-      }
-
-      footer h5 {
-        color: #fac564;
-        margin-bottom: 20px;
-      }
-
-      footer p,
-      footer li {
-        color: #bdc3c7;
-        line-height: 1.8;
-      }
-
-      footer a {
-        color: #bdc3c7;
-        text-decoration: none;
-      }
-
-      footer a:hover {
-        color: white;
-      }
-      .copy-text {
-        font-size: 14px;
-      }
-    </style>
   </head>
-  <body style="background-image: url(images/bg_1.jpg); background-size: cover; background-attachment: fixed;">
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-navbar fixed-top">
+  <body class="menu-page">
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
+        <a href="index.html" class="logo">
           <img src="images/logozotti.png" alt="Nice Pizzaria" />
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a href="index.html" class="nav-link">Início</a>
-            </li>
-            <li class="nav-item">
-              <a href="cardapio.html" class="nav-link active">Cardápio</a>
-            </li>
-          </ul>
-        </div>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="cardapio.html" class="nav-link active">Cardápio</a></li>
+          <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+        </ul>
       </div>
     </nav>
 
-  <div class="card">
-    <h2 class="card-title">Monte sua Pizza</h2>
+    <!-- Order Form -->
+    <section class="order-section">
+      <div class="hero-overlay">
+        <i class="fas fa-pizza-slice"></i>
+        <i class="fas fa-pizza-slice"></i>
+        <i class="fas fa-pizza-slice"></i>
+        <i class="fas fa-pizza-slice"></i>
+        <i class="fas fa-pizza-slice"></i>
+        <i class="fas fa-pizza-slice"></i>
+        <i class="fas fa-pizza-slice"></i>
+        <i class="fas fa-pizza-slice"></i>
+        <i class="fas fa-pizza-slice"></i>
+        <i class="fas fa-pizza-slice"></i>
+        <i class="fas fa-pizza-slice"></i>
+        <i class="fas fa-pizza-slice"></i>
+        <i class="fas fa-pizza-slice"></i>
+        <i class="fas fa-pizza-slice"></i>
+        <i class="fas fa-pizza-slice"></i>
+      </div>
+      <div class="container-small">
+        <div class="order-card">
+          <h1 class="order-title">
+            <i class="fas fa-pizza-slice"></i>
+            Monte sua Pizza
+          </h1>
 
-    <label class="label-text">Tamanho:</label>
-<select id="tamanho" onchange="atualizarSabores()">
-  <option value="">Selecione</option>
-        <option value="ComboFinalDeSemana(2Gigante+1GrandeDoce+Coca)">Combo Final de Semana - R$179,90 (2 Pizza Gigante + 1 Grande Doce + CocaCola2L)</option>
-        <option value="ComboEconômico(1Média+Coca)">Combo Econômico - R$59,90 (1 Pizza Média + CocaCola600ML)</option>
-        <option value="ComboRodízioEmCasa(3Média+Refri2L)">Combo Rodízio em Casa - R$139,90 (3 Pizza Média + Refrigerante2L)</option>
-        <option value="ComboDaCasa(1Grande+Refri2L)">Combo da Casa - R$69,90 (1 Pizza Grande + Refrigerante2L)</option>
-        <option value="Pequena">Pequena - R$59,90 (1 sabor)</option>
-        <option value="Média">Média - R$79,90 (2 sabores)</option>
-        <option value="Grande">Grande - R$97,90 (3 sabores)</option>
-        <option value="Gigante">Gigante - R$119,00 (4 sabores)</option>
-  
-</select>
+          <form id="orderForm">
+            <!-- Tamanho -->
+            <div class="form-group">
+              <label for="tamanho">
+                <i class="fas fa-expand-arrows-alt"></i> Tamanho
+              </label>
+              <select id="tamanho" required>
+                <option value="">Selecione o tamanho</option>
+                <optgroup label="Combos">
+                  <option value="OMelhorCombo">
+                    O Melhor Combo - R$129,90 (1 Grande + 1 Pequena + Coca 2L)
+                  </option>
+                  <option value="ComboFinalDeSemana">
+                    Combo Final de Semana - R$179,90 (2 Gigante + 1 Grande Doce
+                    + Coca 2L)
+                  </option>
+                  <option value="ComboEconomico">
+                    Combo Econômico - R$59,90 (1 Média + Coca 600ml)
+                  </option>
+                  <option value="ComboRodizio">
+                    Combo Rodízio em Casa - R$139,90 (3 Média + Refri 2L)
+                  </option>
+                  <option value="ComboDaCasa">
+                    Combo da Casa - R$69,90 (1 Grande + Refri 2L)
+                  </option>
+                </optgroup>
+                <optgroup label="Tamanhos Individuais">
+                  <option value="Pequena">Pequena - R$59,90 (1 sabor)</option>
+                  <option value="Media">Média - R$79,90 (2 sabores)</option>
+                  <option value="Grande">Grande - R$97,90 (3 sabores)</option>
+                  <option value="Gigante">
+                    Gigante - R$119,00 (4 sabores)
+                  </option>
+                </optgroup>
+              </select>
+            </div>
 
-<div id="sabores"></div>
+            <!-- Sabores -->
+            <div id="saboresContainer"></div>
 
-    <label class="label-text">Remover algum ingrediente?</label>
-    <input type="text" id="remover" placeholder="Ex: sem cebola, sem milho">
+            <!-- Remover Ingredientes -->
+            <div class="form-group">
+              <label for="remover">
+                <i class="fas fa-minus-circle"></i> Remover Ingredientes
+                (opcional)
+              </label>
+              <input
+                type="text"
+                id="remover"
+                placeholder="Ex: sem cebola, sem azeitona"
+              />
+            </div>
 
-    <label class="label-text">Refrigerante:</label>
-    <select id="refri">
-      <option value="">Nenhum</option>
-      <option value="Coca Cola Lata 350ml - 8.00">Coca Cola Lata 350ml - R$8,00</option>
-      <option value="Coca Cola Zero Lata 350ml - 8.00">Coca Cola Zero 350ml - R$8,00</option>
-      <option value="Coca Cola 600ml - 12.00">Coca Cola 600ml - R$12,00</option>
-      <option value="Coca Cola 2L - 19.90">Coca Cola 2L - R$19,90</option>
-      <option value="Guaraná 600ml - 12.00">Guaraná 600ml - R$12,00</option>
-      <option value="Guaraná 2L - 18.00">Guaraná 2L - R$18,00</option>
-      <option value="Fanta Laranja Lata - 8.00">Fanta Laranja Lata - R$8,00</option>
-      <option value="Sprite 2L - 18.00">Sprite 2L - R$18,00</option>
-    </select>
+            <!-- Bebidas -->
+            <div class="form-group">
+              <label for="bebida">
+                <i class="fas fa-glass-whiskey"></i> Bebida
+              </label>
+              <select id="bebida">
+                <option value="">Nenhuma</option>
+                <option value="Coca Cola Lata 350ml - 8.00">
+                  Coca Cola Lata 350ml - R$8,00
+                </option>
+                <option value="Coca Cola Zero Lata 350ml - 8.00">
+                  Coca Cola Zero 350ml - R$8,00
+                </option>
+                <option value="Coca Cola 600ml - 12.00">
+                  Coca Cola 600ml - R$12,00
+                </option>
+                <option value="Coca Cola 2L - 19.90">
+                  Coca Cola 2L - R$19,90
+                </option>
+                <option value="Guaraná 600ml - 12.00">
+                  Guaraná 600ml - R$12,00
+                </option>
+                <option value="Guaraná 2L - 18.00">Guaraná 2L - R$18,00</option>
+                <option value="Fanta Laranja Lata - 8.00">
+                  Fanta Laranja Lata - R$8,00
+                </option>
+                <option value="Sprite 2L - 18.00">Sprite 2L - R$18,00</option>
+              </select>
+            </div>
 
-    <label class="label-text">Forma de Pagamento:</label>
-    <select id="pagamento">
-      <option value="Dinheiro">Dinheiro</option>
-      <option value="Cartão">Cartão</option>
-      <option value="Pix">Pix</option>
-    </select>
+            <!-- Pagamento -->
+            <div class="form-group">
+              <label for="pagamento">
+                <i class="fas fa-credit-card"></i> Forma de Pagamento
+              </label>
+              <select id="pagamento" required>
+                <option value="Dinheiro">Dinheiro</option>
+                <option value="Cartão">Cartão</option>
+                <option value="Pix">Pix</option>
+              </select>
+            </div>
 
-    <label class="label-text">Entrega:</label>
-    <select id="entrega" onchange="mostrarEndereco(); calcularTotal();">
-      <option value="Retirar no Local">Retirar no Local</option>
-      <option value="Tele-entrega">Tele-entrega</option>
-    </select>
+            <!-- Entrega -->
+            <div class="form-group">
+              <label for="entrega">
+                <i class="fas fa-shipping-fast"></i> Entrega
+              </label>
+              <select id="entrega" required>
+                <option value="Retirar no Local">Retirar no Local</option>
+                <option value="Tele-entrega">Tele-entrega</option>
+              </select>
+            </div>
 
-    <div id="endereco" style="display:none;">
-      <label class="label-text">Rua:</label>
-      <input type="text" id="rua" placeholder="Digite a rua">
+            <!-- Endereço (hidden by default) -->
+            <div id="enderecoContainer" style="display: none">
+              <div class="form-group">
+                <label for="rua"> <i class="fas fa-road"></i> Rua </label>
+                <input type="text" id="rua" placeholder="Nome da rua" />
+              </div>
+              <div class="form-group">
+                <label for="numero"> <i class="fas fa-home"></i> Número </label>
+                <input type="text" id="numero" placeholder="Número" />
+              </div>
+              <div class="form-group">
+                <label for="bairro"> <i class="fas fa-map"></i> Bairro </label>
+                <select id="bairro">
+                  <option value="">Selecione o bairro</option>
+                  <option value="8">Centro - R$8,00</option>
+                  <option value="10">Rio Branco - R$10,00</option>
+                  <option value="10">São Leopoldo - R$10,00</option>
+                  <option value="10">Pio X - R$10,00</option>
+                  <option value="10">Marechal Floriano - R$10,00</option>
+                  <option value="12">Santa Lúcia - R$12,00</option>
+                  <option value="12">Cohab - R$12,00</option>
+                  <option value="12">Floresta - R$12,00</option>
+                  <option value="12">Panazollo - R$12,00</option>
+                  <option value="13">Charqueadas - R$13,00</option>
+                  <option value="13">Esplanada - R$13,00</option>
+                  <option value="13">Kaiser - R$13,00</option>
+                  <option value="13">Santos Dumont - R$13,00</option>
+                  <option value="13">Cristo Redentor - R$13,00</option>
+                  <option value="14">Nossa Senhora das Graças - R$14,00</option>
+                  <option value="14">Pioneiro - R$14,00</option>
+                  <option value="14">Sagrada Família - R$14,00</option>
+                  <option value="14">Colina - R$14,00</option>
+                  <option value="14">Nossa Senhora de Lurdes - R$14,00</option>
+                  <option value="14">Petrópolis - R$14,00</option>
+                  <option value="15">Desvio Rizzo - R$15,00</option>
+                  <option value="15">Planalto - R$15,00</option>
+                  <option value="15">São Vitor Cohab - R$15,00</option>
+                  <option value="15">Bela Vista - R$15,00</option>
+                  <option value="15">Cruzeiro - R$15,00</option>
+                  <option value="15">Cidade Nova - R$15,00</option>
+                  <option value="16">Parque das Rosas - R$16,00</option>
+                  <option value="18">São Luís - R$18,00</option>
+                  <option value="18">Santa Fé - R$18,00</option>
+                  <option value="18">São Giacomo - R$18,00</option>
+                  <option value="22">Serrano - R$22,00</option>
+                  <option value="25">Ana Rech - R$25,00</option>
+                  <option value="28">Pedancino - R$28,00</option>
+                </select>
+              </div>
+            </div>
 
-      <label class="label-text">Número:</label>
-      <input type="text" id="numero" placeholder="Número">
+            <!-- Total -->
+            <div class="order-summary">
+              <div class="summary-line">
+                <span>Subtotal:</span>
+                <span id="subtotal">R$ 0,00</span>
+              </div>
+              <div class="summary-line">
+                <span>Taxa de Entrega:</span>
+                <span id="taxaEntrega">R$ 0,00</span>
+              </div>
+              <div class="summary-line total">
+                <span>Total:</span>
+                <span id="totalFinal">R$ 0,00</span>
+              </div>
+            </div>
 
-      <label class="label-text">Bairro:</label>
-      <select id="bairro">
-        <option value="">Selecione</option>
-        <option value="13">Charqueadas - R$13,00</option>
-        <option value="15">Desvio Rizzo - R$15,00</option>
-        <option value="16">Parque das Rosas - R$16,00</option>
-        <option value="13">Esplanada - R$13,00</option>
-        <option value="13">Kaiser - R$13,00</option>
-        <option value="13">Santos Dumont - R$13,00</option>
-        <option value="14">Nossa Senhora das Graças - R$14,00</option>
-        <option value="15">Planalto - R$15,00</option>
-        <option value="15">São Vitor Cohab - R$15,00</option>
-        <option value="15">Bela Vista - R$15,00</option>
-        <option value="15">Cruzeiro - R$15,00</option>
-        <option value="18">São Luís - R$18,00</option>
-        <option value="8">Centro - R$8,00</option>
-        <option value="10">Rio Branco - R$10,00</option>
-        <option value="10">São Leopoldo - R$10,00</option>
-        <option value="14">Pioneiro - R$14,00</option>
-        <option value="18">Santa Fé - R$18,00</option>
-        <option value="22">Serrano - R$22,00</option>
-        <option value="25">Ana Rech - R$25,00</option>
-        <option value="14">Sagrada Família - R$14,00</option>
-        <option value="12">Santa Lúcia - R$12,00</option>
-        <option value="12">Cohab - R$12,00</option>
-        <option value="14">Colina - R$14,00</option>
-        <option value="28">Pedancino - R$28,00</option>
-        <option value="15">Cidade Nova - R$15,00</option>
-        <option value="18">São Giacomo - R$18,00</option>
-        <option value="10">Pio X - R$10,00</option>
-        <option value="10">Marechal Floriano - R$10,00</option>
-        <option value="12">Floresta - R$12,00</option>
-        <option value="12">Panazollo - R$12,00</option>
-        <option value="13">Cristo Redentor - R$13,00</option>
-        <option value="14">Nossa Senhora de Lurdes - R$14,00</option>
-        <option value="14">Petrópolis - R$14,00</option>
-      </select>
-    </div>
-
-    <p class="total" id="subtotal">Subtotal: R$0,00</p>
-    <p class="total" id="taxaEntrega">Taxa de Entrega: R$0,00</p>
-    <p class="total" id="totalFinal"><strong>Total: R$0,00</strong></p>
-
-    <button onclick="enviarWhatsApp()" class="button-style">
-      <i class="fab fa-whatsapp"></i> Enviar Pedido no WhatsApp
-    </button>
-  </div>
-
-<script>
-const saboresLista = [
-   {nome:"Alho e Óleo", ing:"Molho, mussarela, alho, Catupiry e parmesão"},
-    {nome:"Atum", ing:"Molho, mussarela, atum ralado e tomates picados"},
-    {nome:"Bacon", ing:"Molho, mussarela e bacon picado"},
-    {nome:"Bacon ao 4 Queijos", ing:"Molho, mussarela, provolone, parmesão, Catupiry e bacon picado"},
-    {nome:"Bacon com Cheddar", ing:"Molho, mussarela, bacon picado e cheddar"},
-    {nome:"Brócolis", ing:"Molho, mussarela, brócolis e Catupiry"},
-    {nome:"Brócolis com Bacon", ing:"Molho, mussarela, brócolis e bacon picado"},
-    {nome:"Calabresa", ing:"Molho, mussarela e calabresa fatiada em rodelas"},
-    {nome:"Calabresa Acebolada", ing:"Molho, mussarela, calabresa, cebola e azeitona"},
-    {nome:"Camarão", ing:"Molho, mussarela, camarão ao molho vermelho e orégano (Adicional R$9,00)"},
-    {nome:"Carne de Panela com Doritos", ing:"Molho, mussarela, carne de panela desfiada e Doritos"},
-    {nome:"Carbonara", ing:"Molho, mussarela, bacon, cebola, ovos picados e creme de leite"},
-    {nome:"Cinco Queijos", ing:"Molho, mussarela, Catupiry, provolone, parmesão e gorgonzola"},
-    {nome:"Chester", ing:"Molho, mussarela, chester, Catupiry e orégano"},
-    {nome:"Coração", ing:"Molho, mussarela, coração de galinha ao molho vermelho"},
-    {nome:"Copa com Figo", ing:"Molho, mussarela, copa fatiada e figo em calda"},
-    {nome:"Corn Bacon", ing:"Molho, mussarela, bacon picado e milho"},
-    {nome:"Filé", ing:"Molho, mussarela, iscas de carne ao molho e Catupiry"},
-    {nome:"Filé ao Alho e Óleo", ing:"Molho, mussarela, iscas de carne e alho"},
-    {nome:"Filé aos 4 Queijos", ing:"Molho, mussarela, provolone, parmesão, Catupiry e iscas de carne"},
-    {nome:"Filé ao molho Mostarda", ing:"Molho, mussarela, iscas de carne e molho de mostarda"},
-    {nome:"Filé com Palha", ing:"Molho, mussarela, iscas de carne e batata palha"},
-    {nome:"Frango com Catupiry", ing:"Molho, mussarela, frango desfiado e Catupiry"},
-    {nome:"Frango com Cheddar", ing:"Molho, mussarela, frango desfiado e cheddar"},
-    {nome:"Frango com Milho", ing:"Molho, mussarela, frango desfiado e milho"},
-    {nome:"Fricassê de Carne", ing:"Molho, mussarela, iscas de carne, creme de leite e batata palha"},
-    {nome:"Fricassê de Frango", ing:"Molho, mussarela, frango em cubos, creme de leite e batata palha"},
-    {nome:"Italiana", ing:"Molho, mussarela, salame, azeitona, cebola e orégano"},
-    {nome:"Jardineira", ing:"Molho, mussarela, milho, ervilha, palmito, pimentão e cebola"},
-    {nome:"Lasanha", ing:"Molho, mussarela, carne moída e Catupiry"},
-    {nome:"Lombo", ing:"Molho, mussarela, lombo canadense e Catupiry"},
-    {nome:"Lombo com Abacaxi", ing:"Molho, mussarela, lombo canadense e abacaxi picado"},
-    {nome:"Marguerita", ing:"Molho, mussarela, tomate em rodelas, manjericão e Catupiry"},
-    {nome:"Mexicana", ing:"Molho, mussarela, carne moída, cebola, pimentão e pimenta"},
-    {nome:"Milho", ing:"Molho, mussarela, milho e orégano"},
-    {nome:"Milho ao Molho Branco", ing:"Molho, mussarela, milho e creme de leite"},
-    {nome:"Mussarela", ing:"Molho, mussarela e orégano"},
-    {nome:"Palmito", ing:"Molho, mussarela, palmito e tomate picado"},
-    {nome:"Picanha", ing:"Molho, mussarela e fatias de picanha (Adicional R$9,00)"},
-    {nome:"Picanha ao Alho e Óleo", ing:"Molho, mussarela, fatias de picanha e alho"},
-    {nome:"Portuguesa", ing:"Molho, mussarela, presunto, ovos, azeitona e cebola"},
-    {nome:"Quatro Queijos", ing:"Molho, mussarela, Catupiry, provolone e parmesão"},
-    {nome:"Romana", ing:"Molho, mussarela, presunto, tomate em rodelas e parmesão"},
-    {nome:"Seis Queijos", ing:"Molho, mussarela, Catupiry, provolone, parmesão e cheddar"},
-    {nome:"Siciliana", ing:"Molho, mussarela, bacon, champignon, azeitonas e Catupiry"},
-    {nome:"Strogonoff de Carne", ing:"Molho, mussarela, iscas de carne ao molho de strogonoff"},
-    {nome:"Strogonoff de Frango", ing:"Molho, mussarela, frango em cubos ao molho vermelho e Catupiry"},
-    {nome:"Tomate Seco com Rúcula", ing:"Molho, mussarela, tomate seco e rúcula"},
-    {nome:"Tropical", ing:"Molho, mussarela, calabresa moída, palmito e Catupiry"},
-    {nome:"Vegetariana", ing:"Molho, mussarela, palmito, milho, ervilha, brócolis, parmesão e orégano"},
-    {nome:"Abacaxi", ing:"Doce de leite, abacaxi picado e chocolate branco"},
-    {nome:"Abacaxi com Coco", ing:"Doce de leite, chocolate branco, coco ralado e calda de chocolate"},
-    {nome:"Amendoim", ing:"Doce de leite, amendoim e chocolate preto ou branco"},
-    {nome:"Banana", ing:"Doce de leite, banana, canela e chocolate branco"},
-    {nome:"Beijinho", ing:"Chocolate branco, coco ralado e leite condensado"},
-    {nome:"Branca de Neve", ing:"Doce de leite e chocolate branco"},
-    {nome:"Califórnia", ing:"Doce de leite, pêssego, figo, abacaxi, canela, mussarela e leite condensado"},
-    {nome:"Chocolate Branco com Nozes", ing:"Doce de leite, chocolate branco e nozes picada (Adicional R$5,00)"},
-    {nome:"Dois Amores", ing:"Doce de leite, chocolate branco e chocolate preto"},
-    {nome:"M&M's", ing:"Doce de leite, chocolate branco ou preto e MM's"},
-    {nome:"Morango Branco", ing:"Doce de leite, chocolate branco, morangos picados e creme de leite"},
-    {nome:"Morango Moreno", ing:"Doce de leite, chocolate preto, morangos picado e creme de leite"},
-    {nome:"Nega Maluca", ing:"Doce de leite e chocolate preto"},
-    {nome:"Prestígio", ing:"Doce de leite, chocolate preto e coco ralado"},
-    {nome:"Romeo e Julieta", ing:"Leite condensado, goiabada, creme de leite e muçarela"},
-    {nome:"Sonho de Valsa", ing:"Doce de leite, chocolate preto e Sonho de Valsa picado"},
-    {nome:"Oreo", ing:"Doce de leite, chocolate preto e Oreo (Adicional R$5,00)"},
-    {nome:"Ouro Branco", ing:"Doce de leite, chocolate branco e Ouro branco picado"}
-];
-
-function atualizarSabores() {
-  const tamanho = document.getElementById("tamanho").value;
-  const saboresDiv = document.getElementById("sabores");
-  saboresDiv.innerHTML = "";
-
-  if (tamanho === "Promo") {
-    const saboresSalgados = ["Filé com Palha", "Frango com Catupiry", "Calabresa", "Marguerita", "Mussarela", "Milho", "Brócolis", "Romana"];
-    for (let i = 1; i <= 3; i++) {
-      const select = document.createElement("select");
-      select.innerHTML = "<option value=''>Selecione sabor salgado</option>";
-      saboresSalgados.forEach(s => select.innerHTML += `<option value="${s}">${s}</option>`);
-      saboresDiv.appendChild(select);
-    }
-    const saboresDoces = ["Chocolate Branco", "Chocolate Preto", "Dois Amores", "Abacaxi"];
-    const selectDoce = document.createElement("select");
-    selectDoce.innerHTML = "<option value=''>Selecione sabor doce</option>";
-    saboresDoces.forEach(s => selectDoce.innerHTML += `<option value="${s}">${s}</option>`);
-    saboresDiv.appendChild(document.createElement("br"));
-    saboresDiv.appendChild(selectDoce);
-  } else {
-    let qtd = 0;
-    if (tamanho === "ComboFinalDeSemana(2Gigante+1GrandeDoce+Coca)") qtd = 3;
-    if (tamanho === "ComboEconômico(1Média+Coca)") qtd = 2;
-    if (tamanho === "ComboRodízioEmCasa(3Média+Refri2L)") qtd = 6;
-    if (tamanho === "ComboDaCasa(1Grande+Refri2L)") qtd = 3;
-    if (tamanho === "Pequena") qtd = 1;
-    if (tamanho === "Média") qtd = 2;
-    if (tamanho === "Grande") qtd = 3;
-    if (tamanho === "Gigante") qtd = 4;
-
-    for (let i = 1; i <= qtd; i++) {
-      const select = document.createElement("select");
-      select.innerHTML = "<option value=''>Selecione o sabor</option>";
-      saboresLista.forEach(s => select.innerHTML += `<option value="${s.nome}">${s.nome} - ${s.ing}</option>`);
-      saboresDiv.appendChild(select);
-    }
-  }
-  calcularTotal();
-}
-
-function mostrarEndereco() {
-  document.getElementById("endereco").style.display = 
-    document.getElementById("entrega").value === "Tele-entrega" ? "block" : "none";
-}
-
-function calcularTotal() {
-  let subtotal = 0;
-  let taxa = 0;
-  
-  const tamanho = document.getElementById("tamanho").value;
-  if (tamanho === "ComboFinalDeSemana(2Gigante+1GrandeDoce+Coca)") subtotal += 179,90;
-  if (tamanho === "ComboEconômico(1Média+Coca)") subtotal += 59,90;
-  if (tamanho === "ComboRodízioEmCasa(3Média+Refri2L)") subtotal += 139,90;
-  if (tamanho === "ComboDaCasa(1Grande+Refri2L)") subtotal += 69,90;
-  if (tamanho === "Pequena") subtotal += 59.90;
-  if (tamanho === "Média") subtotal += 79.90;
-  if (tamanho === "Grande") subtotal += 97.90;
-  if (tamanho === "Gigante") subtotal += 119.00;
-
-  document.querySelectorAll("#sabores select").forEach(sel => {
-    const valor = sel.value;
-    if (valor.includes("Camarão") || valor.includes("Picanha")) subtotal += 9.00;
-    if (valor.includes("Nozes") || valor.includes("Oreo")) subtotal += 5.00;
-  });
-
-  const refri = document.getElementById("refri").value;
-  if (refri) subtotal += parseFloat(refri.split(" - ")[1]);
-
-  if(document.getElementById("entrega").value === "Tele-entrega"){
-    const bairroSelect = document.getElementById("bairro");
-    const bairroValor = parseFloat(bairroSelect.value);
-    if(!isNaN(bairroValor)) taxa = bairroValor;
-  }
-
-  document.getElementById("subtotal").innerText = "Subtotal: R$" + subtotal.toFixed(2).replace(".", ",");
-  document.getElementById("taxaEntrega").innerText = "Taxa de Entrega: R$" + taxa.toFixed(2).replace(".", ",");
-  document.getElementById("totalFinal").innerText = "Total: R$" + (subtotal + taxa).toFixed(2).replace(".", ",");
-}
-
-document.addEventListener("change", calcularTotal);
-
-function enviarWhatsApp() {
-  let pedido = "🍕 Pedido NicePizzaria:%0A";
-  pedido += "Tamanho: " + document.getElementById("tamanho").value + "%0A";
-  document.querySelectorAll("#sabores select").forEach((sel, i) => {
-    pedido += "Sabor " + (i+1) + ": " + sel.value + "%0A";
-  });
-  const remover = document.getElementById("remover").value;
-  if (remover) pedido += "Sem: " + remover + "%0A";
-  const refri = document.getElementById("refri").value;
-  if (refri) pedido += "Bebida: " + refri.split(" - ")[0] + "%0A";
-  pedido += "Pagamento: " + document.getElementById("pagamento").value + "%0A";
-  pedido += "Entrega: " + document.getElementById("entrega").value + "%0A";
-  if(document.getElementById("entrega").value === "Tele-entrega"){
-    pedido += "Endereço: " + document.getElementById("rua").value + ", Nº " + document.getElementById("numero").value + ", Bairro " + document.getElementById("bairro").selectedOptions[0].text + "%0A";
-  }
-  pedido += document.getElementById("totalFinal").innerText + "%0A";
-  window.open("https://wa.me/5554994897632?text=" + pedido, "_blank");
-}
-</script>
-
-  </body>
-</html>
-<!-- Footer permanece igual -->
-<footer id="contato">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-6 mb-4">
-        <h5>Nice Pizzaria</h5>
-        <p>A melhor pizzaria da região. Sabor e qualidade em cada fatia.</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fab fa-whatsapp"></i> Enviar Pedido no WhatsApp
+            </button>
+          </form>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <h5>Contato</h5>
-        <p>
-          <i class="fas fa-map-marker-alt me-2"></i>Rua Marechal Floriano,
-          959<br />Centro - Caxias do Sul RS
-        </p>
-        <p><i class="fas fa-phone me-2"></i>54 99489-7632</p>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <h5>Horário de Funcionamento</h5>
-        <p>Quarta-Feira / Domingo :<br /><strong>18:30 - 23:30</strong></p>
-      </div>
-    </div>
-    <hr class="border-light" />
-    <div class="row">
-      <div class="col-12 text-center">
-        <p class="mb-0 copy-text">
-          Copyright &copy;
-          <script>document.write(new Date().getFullYear());</script>
-          Todos os direitos reservados by EvolWeb
-        </p>
-      </div>
-    </div>
-  </div>
-</footer>
+    </section>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-      
-</body>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <img
+              src="images/logozotti.png"
+              alt="Nice Pizzaria"
+              class="footer-logo"
+            />
+            <p>A melhor pizzaria da região. Sabor e qualidade em cada fatia.</p>
+            <div class="social-links">
+              <a
+                href="https://www.instagram.com/nicepizzaria_2025"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+            <a
+              href="https://www.ifood.com.br/delivery/caxias-do-sul-rs/nice-pizzaria-pio-x/634c5db2-ce04-4745-b109-c15a205804d4"
+              target="_blank"
+              class="ifood-link"
+            >
+              <img src="images/ifood.jpg" alt="iFood" class="ifood-logo" />
+              <span>Também estamos no iFood</span>
+            </a>
+          </div>
+          <div class="footer-col">
+            <h4>Contato</h4>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Rua Marechal Floriano,
+              959<br />Centro - Caxias do Sul/RS
+            </p>
+            <p><i class="fas fa-phone"></i> 54 99489-7632</p>
+          </div>
+          <div class="footer-col">
+            <h4>Horário</h4>
+            <p>Quarta a Domingo<br /><strong>18:30 - 23:30</strong></p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="year"></span> Nice Pizzaria. Todos os direitos
+            reservados by EvolWeb
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

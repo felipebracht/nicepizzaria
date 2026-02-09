@@ -1,0 +1,129 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.bg-navbar {
+  background-color: #222;
+}
+
+.hero-section {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("images/bg_1.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.info-section {
+  background-color: #ffedcb;
+  padding: 60px 0;
+}
+
+.info-card {
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card i {
+  font-size: 3rem;
+  color: #fac564;
+  margin-bottom: 20px;
+}
+
+.info-card h4 {
+  color: #000;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.info-card p {
+  color: #333;
+  margin-bottom: 0;
+}
+
+.btn-primary {
+  background-color: #fac564;
+  border-color: #fac564;
+  color: black;
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 25px;
+}
+
+.btn-primary:hover {
+  background-color: #4f4537;
+  border-color: #4f4537;
+}
+
+.btn-outline-light {
+  border: 2px solid white;
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 25px;
+}
+
+.navbar {
+  transition: all 0.3s ease;
+}
+
+.navbar-brand img {
+  max-height: 80px;
+}
+
+.social-links a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #4f4537;
+  color: white;
+  margin-right: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #fac564;
+  color: white;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  padding: 40px 0 20px;
+}
+
+footer h5 {
+  color: #fac564;
+  margin-bottom: 20px;
+}
+
+footer p,
+footer li {
+  color: #bdc3c7;
+  line-height: 1.8;
+}
+
+footer a {
+  color: #bdc3c7;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
+}
+.copy-text {
+  font-size: 14px;
+}
