@@ -506,8 +506,46 @@ ul {
   gap: 0 1.5rem;
 }
 
+#saboresContainer:has(.pizza-group) {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pizza-group {
+  background: var(--bg-light);
+  border: 2px solid var(--bg-cream);
+  border-radius: 15px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.pizza-group-title {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pizza-group-title i {
+  font-size: 0.95rem;
+}
+
+.pizza-group-sabores {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1.5rem;
+}
+
 @media (max-width: 480px) {
   #saboresContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .pizza-group-sabores {
     grid-template-columns: 1fr;
   }
 }

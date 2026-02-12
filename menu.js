@@ -87,16 +87,58 @@ const precos = {
 };
 
 const qtdSabores = {
-    OMelhorCombo: 4,
-    ComboFinalDeSemana: 11,
+    OMelhorCombo: 3,
+    ComboFinalDeSemana: 8,
     ComboEconomico: 2,
     ComboRodizio: 6,
-    ComboDaCasa: 3,
+    ComboDaCasa: 2,
     Pequena: 1,
     Media: 2,
-    Grande: 3,
-    Gigante: 4
+    Grande: 2,
+    Gigante: 3
 };
+
+const comboPizzas = {
+    OMelhorCombo: [
+        { tamanho: "Grande", sabores: 2, tipo: "salgada" },
+        { tamanho: "Pequena Doce", sabores: 1, tipo: "doce" }
+    ],
+    ComboFinalDeSemana: [
+        { tamanho: "Gigante", sabores: 3, tipo: "salgada" },
+        { tamanho: "Gigante", sabores: 3, tipo: "salgada" },
+        { tamanho: "Grande Doce", sabores: 2, tipo: "doce" }
+    ],
+    ComboEconomico: [
+        { tamanho: "Média", sabores: 2, tipo: "salgada" }
+    ],
+    ComboRodizio: [
+        { tamanho: "Média", sabores: 2, tipo: "salgada" },
+        { tamanho: "Média", sabores: 2, tipo: "salgada" },
+        { tamanho: "Média", sabores: 2, tipo: "salgada" }
+    ],
+    ComboDaCasa: [
+        { tamanho: "Grande", sabores: 2, tipo: "salgada" }
+    ]
+};
+
+const saboresComboSalgados = [
+    "Fricassê de Frango",
+    "Frango com Catupiry",
+    "Filé com Palha",
+    "Strogonoff de Carne",
+    "Strogonoff de Frango",
+    "Mussarela",
+    "Calabresa"
+];
+
+const saboresComboDoces = [
+    "Nega Maluca",
+    "Branca de Neve",
+    "Amendoim",
+    "Dois Amores",
+    "Morango Moreno",
+    "Morango Branco"
+];
 
 const combosComBebida = ['OMelhorCombo', 'ComboFinalDeSemana', 'ComboEconomico', 'ComboRodizio', 'ComboDaCasa'];
 
@@ -112,6 +154,35 @@ const orderForm = document.getElementById('orderForm');
 // ==================== FUNCTIONS ====================
 function formatCurrency(value) {
     return `R$ ${value.toFixed(2).replace('.', ',')}`;
+}
+
+function criarSelectSabor(labelText, listaSabores) {
+    const lista = listaSabores || sabores;
+    const formGroup = document.createElement('div');
+    formGroup.className = 'form-group';
+
+    const label = document.createElement('label');
+    label.innerHTML = `<i class="fas fa-pizza-slice"></i> ${labelText}`;
+
+    const select = document.createElement('select');
+    select.required = true;
+    select.innerHTML = '<option value="">Selecione o sabor</option>';
+
+    lista.forEach(sabor => {
+        const option = document.createElement('option');
+        option.value = sabor.nome;
+        option.textContent = `${sabor.nome} - ${sabor.ing}`;
+        if (sabor.adicional) {
+            option.dataset.adicional = sabor.adicional;
+        }
+        select.appendChild(option);
+    });
+
+    select.addEventListener('change', calcularTotal);
+
+    formGroup.appendChild(label);
+    formGroup.appendChild(select);
+    return formGroup;
 }
 
 function atualizarSabores() {
@@ -131,37 +202,58 @@ function atualizarSabores() {
         calcularTotal();
         return;
     }
-    
-    const qtd = qtdSabores[tamanho] || 0;
-    
-    for (let i = 0; i < qtd; i++) {
-        const formGroup = document.createElement('div');
-        formGroup.className = 'form-group';
-        
-        const label = document.createElement('label');
-        label.innerHTML = `<i class="fas fa-pizza-slice"></i> Sabor ${i + 1}`;
-        
-        const select = document.createElement('select');
-        select.required = true;
-        select.innerHTML = '<option value="">Selecione o sabor</option>';
-        
-        sabores.forEach(sabor => {
-            const option = document.createElement('option');
-            option.value = sabor.nome;
-            option.textContent = `${sabor.nome} - ${sabor.ing}`;
-            if (sabor.adicional) {
-                option.dataset.adicional = sabor.adicional;
-            }
-            select.appendChild(option);
+
+    // Se for combo, agrupar por pizza
+    if (comboPizzas[tamanho]) {
+        const pizzas = comboPizzas[tamanho];
+
+        // Contar quantas pizzas de cada tamanho para decidir se numerar
+        const contagem = {};
+        pizzas.forEach(p => {
+            contagem[p.tamanho] = (contagem[p.tamanho] || 0) + 1;
         });
-        
-        select.addEventListener('change', calcularTotal);
-        
-        formGroup.appendChild(label);
-        formGroup.appendChild(select);
-        saboresContainer.appendChild(formGroup);
+
+        // Contador para numerar pizzas do mesmo tamanho
+        const contador = {};
+
+        pizzas.forEach(pizza => {
+            const group = document.createElement('div');
+            group.className = 'pizza-group';
+
+            const title = document.createElement('h3');
+            title.className = 'pizza-group-title';
+
+            let titulo = `Pizza ${pizza.tamanho}`;
+            if (contagem[pizza.tamanho] > 1) {
+                contador[pizza.tamanho] = (contador[pizza.tamanho] || 0) + 1;
+                titulo += ` (${contador[pizza.tamanho]})`;
+            }
+            title.innerHTML = `<i class="fas fa-pizza-slice"></i> ${titulo}`;
+
+            group.appendChild(title);
+
+            const saboresGrid = document.createElement('div');
+            saboresGrid.className = 'pizza-group-sabores';
+
+            const listaSabores = pizza.tipo === 'doce'
+                ? sabores.filter(s => saboresComboDoces.includes(s.nome))
+                : sabores.filter(s => saboresComboSalgados.includes(s.nome));
+
+            for (let i = 0; i < pizza.sabores; i++) {
+                saboresGrid.appendChild(criarSelectSabor(`Sabor ${i + 1}`, listaSabores));
+            }
+
+            group.appendChild(saboresGrid);
+            saboresContainer.appendChild(group);
+        });
+    } else {
+        // Tamanho individual - sem agrupamento
+        const qtd = qtdSabores[tamanho] || 0;
+        for (let i = 0; i < qtd; i++) {
+            saboresContainer.appendChild(criarSelectSabor(`Sabor ${i + 1}`));
+        }
     }
-    
+
     calcularTotal();
 }
 
@@ -232,13 +324,29 @@ function enviarWhatsApp(e) {
     mensagem += `*Tamanho:* ${tamanho}%0A%0A`;
     
     // Sabores
-    const saborSelects = saboresContainer.querySelectorAll('select');
-    mensagem += '*Sabores:*%0A';
-    saborSelects.forEach((select, i) => {
-        if (select.value) {
-            mensagem += `${i + 1}. ${select.value}%0A`;
-        }
-    });
+    const tamanhoValue = tamanhoSelect.value;
+    if (comboPizzas[tamanhoValue]) {
+        const pizzaGroups = saboresContainer.querySelectorAll('.pizza-group');
+        pizzaGroups.forEach(group => {
+            const title = group.querySelector('.pizza-group-title').textContent.trim();
+            mensagem += `*${title}:*%0A`;
+            const selects = group.querySelectorAll('select');
+            selects.forEach((select, i) => {
+                if (select.value) {
+                    mensagem += `${i + 1}. ${select.value}%0A`;
+                }
+            });
+            mensagem += '%0A';
+        });
+    } else {
+        const saborSelects = saboresContainer.querySelectorAll('select');
+        mensagem += '*Sabores:*%0A';
+        saborSelects.forEach((select, i) => {
+            if (select.value) {
+                mensagem += `${i + 1}. ${select.value}%0A`;
+            }
+        });
+    }
     
     // Remover ingredientes
     const remover = document.getElementById('remover').value;
